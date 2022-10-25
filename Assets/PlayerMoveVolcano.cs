@@ -5,28 +5,28 @@ using UnityEngine;
 public class PlayerMoveVolcano : MonoBehaviour
 {
 
-    public RigidBody rb;
+    public Rigidbody rb;
 
     void FixedUpdate()
     {
         if(Input.GetKey("d"))
         {
-            rb.addForce(20 * Time.deltaTime, 0, 0);
+            rb.AddForce(20 * Time.deltaTime, 0, 0);
         }
 
         if(Input.GetKey("a"))
         {
-            rb.addForce(-20 * Time.deltaTime, 0, 0);
+            rb.AddForce(-20 * Time.deltaTime, 0, 0);
         }
 
         if(Input.GetKey("w"))
         {
-            rb.addForce(0, 0, 20 * Time.deltaTime);
+            rb.AddForce(0, 0, 20 * Time.deltaTime);
         }
 
         if(Input.GetKey("s"))
         {
-            rb.addForce(0, 0, -20 * Time.deltaTime);
+            rb.AddForce(0, 0, -20 * Time.deltaTime);
         }
     }
 }
