@@ -4,29 +4,31 @@ using UnityEngine;
 
 public class PlayerMoveVolcano : MonoBehaviour
 {
-
-    public Rigidbody rb;
-
     void FixedUpdate()
     {
+        Vector3 tranD = new Vector3(1.5f, 0, 0);
+        Vector3 tranA = new Vector3(-1.5f, 0, 0);
+        Vector3 tranW = new Vector3(0, 0, 1.5f);
+        Vector3 tranS = new Vector3(0, 0, -1.5f);
+        
         if(Input.GetKey("d"))
         {
-            rb.AddForce(20 * Time.deltaTime, 0, 0);
+            transform.Translate(tranD);
         }
 
         if(Input.GetKey("a"))
         {
-            rb.AddForce(-20 * Time.deltaTime, 0, 0);
+            transform.Translate(tranA);
         }
 
         if(Input.GetKey("w"))
         {
-            rb.AddForce(0, 0, 20 * Time.deltaTime);
+            transform.Translate(tranW);
         }
 
         if(Input.GetKey("s"))
         {
-            rb.AddForce(0, 0, -20 * Time.deltaTime);
+            transform.Translate(tranS);
         }
     }
 }
